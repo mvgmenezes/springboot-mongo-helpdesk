@@ -9,14 +9,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.mmenezes.helpdesk.api.entity.User;
-import com.mmenezes.helpdesk.api.repository.UserRespository;
+import com.mmenezes.helpdesk.api.repository.UserRepository;
 import com.mmenezes.helpdesk.api.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{
 	
 	@Autowired
-	private UserRespository userRepository;
+	private UserRepository userRepository;
 
 	@Override
 	public User findByEmail(String email) {
