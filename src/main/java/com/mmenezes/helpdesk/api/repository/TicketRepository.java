@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.mmenezes.helpdesk.api.entity.Ticket;
 
-public interface TicketRespository extends MongoRepository<Ticket, String>{
+public interface TicketRepository extends MongoRepository<Ticket, String>{
 
 	//realiza o filtro pelo o objeto User pelo atributo Id (findByUserId) e realiza a ordenaçao
 	//pelo o atributo Date da classe ticket. 
