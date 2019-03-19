@@ -12,6 +12,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+
+//#1 - Classe util do JWT
 public class JwtTokenUtil implements Serializable {
 
 	/**
