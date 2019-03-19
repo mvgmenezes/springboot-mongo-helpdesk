@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-//#2 - O spring security precisa de uma classe que implemente o UserDetails, o JwtUtil usa para validar o token
+//JWT#2 - O spring security precisa de uma classe que implemente o UserDetails, o JwtUtil usa para validar o token
 public class JwtUser implements UserDetails{
 
 	/**

@@ -9,7 +9,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import com.mmenezes.helpdesk.api.entity.User;
 import com.mmenezes.helpdesk.api.enums.ProfileEnum;
 
-//#3 - Classe para converter o nosso usuario em um usuario reconhecido pelo o Spring Security
+//JWT#3 - Classe para converter o nosso usuario em um usuario reconhecido pelo o Spring Security
 public class JwtUserFactory {
 
 	private JwtUserFactory() {
