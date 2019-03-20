@@ -21,7 +21,7 @@ public interface TicketRepository extends MongoRepository<Ticket, String>{
 	//lista somente os tickets do usuario logado parametro userId no final do nome do metodo
 	//Containing  = equivalente ao Like do sql.
 	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityAndUserIdOrderByDateDesc(
-			String title, String status, String priority, Pageable pages);
+			String title, String status, String priority, String userId, Pageable pages);
 	
 	//lista somente os tickets de um cliente parametro AssignedUser no final do nome do metodo
 	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityAndAssignedUserIdOrderByDateDesc(
