@@ -52,7 +52,7 @@ public class TicketController {
 	private UserService userService;
 	
 	@PostMapping()
-	@PreAuthorize("hasAnyRole('CUSTOMER'")
+	@PreAuthorize("hasAnyRole('CUSTOMER')")
 	public ResponseEntity<Response<Ticket>> createOrUpdate(HttpServletRequest request, @RequestBody Ticket ticket, 
 			BindingResult result){
 		
@@ -105,7 +105,7 @@ public class TicketController {
 	
 	
 	@PutMapping()
-	@PreAuthorize("hasAnyRole('CUSTOMER'")
+	@PreAuthorize("hasAnyRole('CUSTOMER')")
 	public ResponseEntity<Response<Ticket>> update(HttpServletRequest request, @RequestBody Ticket ticket, 
 			BindingResult result){
 		
@@ -155,7 +155,7 @@ public class TicketController {
 	
 	
 	@GetMapping(value="{id}")
-	@PreAuthorize("hasAnyRole('CUSTOMER', TECHNICIAN")
+	@PreAuthorize("hasAnyRole('CUSTOMER', 'TECHNICIAN')")
 	public ResponseEntity<Response<Ticket>> findById(@PathVariable("id") String id){
 	
 		Response<Ticket> response = new Response<Ticket>();
@@ -189,7 +189,7 @@ public class TicketController {
 	
 	
 	@DeleteMapping(value="{id}")
-	@PreAuthorize("hasAnyRole('CUSTOMER'")
+	@PreAuthorize("hasAnyRole('CUSTOMER')")
 	public ResponseEntity<Response<String>> delete(@PathVariable("id") String id){
 		
 		Response<String> response = new Response<String>();
@@ -209,7 +209,7 @@ public class TicketController {
 	
 	
 	@GetMapping(value="{page}/{count}")
-	@PreAuthorize("hasAnyRole('CUSTOMER', TECHNICIAN")
+	@PreAuthorize("hasAnyRole('CUSTOMER', 'TECHNICIAN')")
 	public ResponseEntity<Response<Page<Ticket>>> findAll(HttpServletRequest request, @PathVariable("page") int page,@PathVariable("count") int count ){
 	//o parametro request serve para recuperar o usuario do token
 		
@@ -227,7 +227,7 @@ public class TicketController {
     }
 	
 	@GetMapping(value="{page}/{count}/{number}/{title}/{status}/{priority}/{assigned}")
-	@PreAuthorize("hasAnyRole('CUSTOMER', TECHNICIAN")
+	@PreAuthorize("hasAnyRole('CUSTOMER', 'TECHNICIAN') ")
 	public ResponseEntity<Response<Page<Ticket>>> findByParams(HttpServletRequest request, 
 			@PathVariable("page") int page,
 			@PathVariable("count") int count,
