@@ -65,7 +65,7 @@ public class TicketController {
 				return ResponseEntity.badRequest().body(response);
 			}
 			
-			ticket.setStatus(StatusEnum.New);
+			ticket.setStatus(StatusEnum.getStatus("New"));
 			ticket.setUser(userFromRequest(request));
 			ticket.setDate(new Date());
 			ticket.setNumber(generateNumber());
@@ -238,9 +238,9 @@ public class TicketController {
 			@PathVariable("assigned") boolean assigned
 			){
 	
-		title = title.equals("uniformed") ? "" : title;
-		status = status.equals("uniformed") ? "" : status;
-		priority = priority.equals("uniformed") ? "" : priority;
+		title = title.equals("uninformed") ? "" : title;
+		status = status.equals("uninformed") ? "" : status;
+		priority = priority.equals("uninformed") ? "" : priority;
 		
 		Response<Page<Ticket>> response = new Response<Page<Ticket>>();
 		

@@ -27,7 +27,7 @@ public class Ticket {
 	private Integer number;
 	
 	private StatusEnum status;
-	
+		
 	private PriorityEnum priority;
 	
 	@DBRef(lazy = true)
